@@ -57,7 +57,8 @@ RUN apk --update add \
     'erlang-xmerl<19' && \
     rm -rf /var/cache/apk/*
 
-RUN wget https://github.com/erlang/rebar3/releases/download/3.1.0/rebar3 -O /usr/local/bin/rebar3 && \
+RUN curl -sSL https://github.com/erlang/rebar3/releases/download/3.1.0/rebar3 \
+    -o /usr/local/bin/rebar3 && \
     chmod +x /usr/local/bin/rebar3 && \
     mkdir -p $HOME/.config/rebar3/ && \
     echo '{plugins, [rebar3_hex]}.' > $HOME/.config/rebar3/rebar.config && \
