@@ -1,7 +1,7 @@
 FROM edib/base-dev:latest
 MAINTAINER Christoph Grabo <edib@markentier.com>
 
-RUN apk --update add \
+RUN apk --no-cache add \
     'erlang<19' \
     'erlang-asn1<19' \
     'erlang-common-test<19' \
@@ -54,8 +54,7 @@ RUN apk --update add \
     'erlang-tools<19' \
     'erlang-typer<19' \
     'erlang-webtool<19' \
-    'erlang-xmerl<19' && \
-    rm -rf /var/cache/apk/*
+    'erlang-xmerl<19'
 
 RUN curl -sSL https://github.com/erlang/rebar3/releases/download/3.1.0/rebar3 \
     -o /usr/local/bin/rebar3 && \
