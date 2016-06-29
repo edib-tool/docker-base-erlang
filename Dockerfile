@@ -1,4 +1,4 @@
-FROM edib/base-dev:latest
+FROM edib/base-dev:3.4
 MAINTAINER Christoph Grabo <edib@markentier.com>
 
 RUN apk --no-cache add \
