@@ -56,7 +56,7 @@ RUN apk --no-cache add \
     'erlang-webtool<19' \
     'erlang-xmerl<19'
 
-RUN curl -sSL https://github.com/erlang/rebar3/releases/download/3.1.0/rebar3 \
+RUN curl -sSL https://github.com/erlang/rebar3/releases/download/3.2.0/rebar3 \
     -o /usr/local/bin/rebar3 && \
     chmod +x /usr/local/bin/rebar3 && \
     mkdir -p $HOME/.config/rebar3/ && \
