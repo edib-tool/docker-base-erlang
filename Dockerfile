@@ -1,7 +1,7 @@
 FROM edib/base-dev:3.4
 MAINTAINER Christoph Grabo <edib@markentier.com>
 
-RUN apk --no-cache add \
+RUN apk --no-cache upgrade && apk --no-cache add \
     'erlang<19' \
     'erlang-asn1<19' \
     'erlang-common-test<19' \
