@@ -1,4 +1,4 @@
-# FROM edib/base-erlang:18
+# FROM edib/base-erlang:19
 
 Erlang base image.
 
