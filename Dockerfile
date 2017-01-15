@@ -56,9 +56,12 @@ RUN apk --no-cache upgrade && apk --no-cache add \
     'erlang-webtool<20' \
     'erlang-xmerl<20'
 
-RUN curl -sSL https://github.com/erlang/rebar3/releases/download/3.2.0/rebar3 \
+ARG REBAR3_VERSION
+ENV REBAR3_VERSION ${REBAR3_VERSION:-3.3.4}
+
+RUN curl -sSL https://github.com/erlang/rebar3/releases/download/$REBAR3_VERSION/rebar3 \
     -o /usr/local/bin/rebar3 && \
     chmod +x /usr/local/bin/rebar3 && \
     mkdir -p $HOME/.config/rebar3/ && \
-    echo '{plugins, [rebar3_hex]}.' > $HOME/.config/rebar3/rebar.config && \
+    echo "{plugins, [rebar3_hex]}." > $HOME/.config/rebar3/rebar.config && \
     rebar3 update && rebar3 plugins upgrade rebar3_hex
