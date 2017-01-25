@@ -1,4 +1,4 @@
-FROM edib/base-dev:3.4
+FROM edib/base-dev:3.5
 MAINTAINER Christoph Grabo <edib@markentier.com>
 
 RUN apk --no-cache upgrade && apk --no-cache add \
@@ -37,7 +37,6 @@ RUN apk --no-cache upgrade && apk --no-cache add \
     'erlang-odbc<20' \
     'erlang-orber<20' \
     'erlang-os-mon<20' \
-    'erlang-ose<20' \
     'erlang-otp-mibs<20' \
     'erlang-parsetools<20' \
     'erlang-percept<20' \
@@ -50,10 +49,8 @@ RUN apk --no-cache upgrade && apk --no-cache add \
     'erlang-ssl<20' \
     'erlang-stdlib<20' \
     'erlang-syntax-tools<20' \
-    'erlang-test-server<20' \
     'erlang-tools<20' \
     'erlang-typer<20' \
-    'erlang-webtool<20' \
     'erlang-xmerl<20'
 
 ARG REBAR3_VERSION
