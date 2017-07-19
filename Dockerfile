@@ -1,4 +1,4 @@
-FROM edib/base-dev:3.5
+FROM edib/base-dev:3.6
 MAINTAINER Christoph Grabo <edib@markentier.com>
 
 RUN apk --no-cache upgrade && apk --no-cache add \
@@ -54,7 +54,7 @@ RUN apk --no-cache upgrade && apk --no-cache add \
     'erlang-xmerl<20'
 
 ARG REBAR3_VERSION
-ENV REBAR3_VERSION ${REBAR3_VERSION:-3.3.4}
+ENV REBAR3_VERSION ${REBAR3_VERSION:-3.4.2}
 
 RUN curl -sSL https://github.com/erlang/rebar3/releases/download/$REBAR3_VERSION/rebar3 \
     -o /usr/local/bin/rebar3 && \
